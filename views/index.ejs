@@ -23,7 +23,7 @@
                 </form>
                 <form method="POST" action="/delete_task">
                     <input type="hidden" name="id" value="<%= item._id %>">
-                    <input type="submit" value="削除する">
+                    <input type="submit" value="削除する" onclick="return confirm('削除してよろしいですか？');">
                 </form>
             </li>
             <% }) %>
