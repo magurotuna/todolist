@@ -1,6 +1,39 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  background: #3cb3e4;
+  padding: 5px 15px;
+  border-radius: 0 10px 0 10px;
+  color: #fff;
+}
+
+#textbox {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    color: #666;
+    background: #f0f8ff;
+    width: 300px;
+}
+
+ul li {
+    list-style:decimal;
+}
+
+.button {
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    display:inline;
+    text-align:center;
+    padding:5px 0 7px;
+    color:#fff;
+    background-color:#3cb3e4;
+    border-radius:5px;
+    width:150px;
 }
 
 a {

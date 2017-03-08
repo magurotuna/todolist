@@ -7,23 +7,23 @@
     <body>
         <h1><%= title %></h1>
         <form method="POST" action="/add_task">
-            <input type="text" name="task" placeholder="タスクを入力">
-            <input type="submit" value="追加する">
+            <input type="text" name="task" placeholder="タスクを入力" id="textbox"/>
+            <input type="submit" value="追加する" class="button">
         </form>
         <ul>
-            <% items.forEach(function(item) { %>
+            <% items.reverse(); items.forEach(function(item) { %>
             <li>
+                <%= item.text %>
                 <% if(item.isDone) { %>
                     &#10003;
                 <% } %>
-                <%= item.text %>
-                <form method="POST" action="/check_task">
+                <form method="POST" action="/check_task" class="check">
                     <input type="hidden" name="id" value="<%= item._id %>">
-                    <input type="submit" value="チェックをつける/外す">
+                    <input type="submit" value="チェックをつける/外す" class="button">
                 </form>
-                <form method="POST" action="/delete_task">
+                <form method="POST" action="/delete_task" class="delete">
                     <input type="hidden" name="id" value="<%= item._id %>">
-                    <input type="submit" value="削除する" onclick="return confirm('削除してよろしいですか？');">
+                    <input type="submit" value="削除する" onclick="return confirm('削除してよろしいですか？');" class="button">
                 </form>
             </li>
             <% }) %>
