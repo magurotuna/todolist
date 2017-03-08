@@ -1,13 +1,15 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/todolist');
+var Schema = mongoose.Schema;
+//var db = mongoose.connect('mongodb://localhost/todolist');
 
 function validator(v) {
     return v.length > 0;
 }
 
-var Task = new mongoose.Schema({
-    text: {type: String, validate: [validator, "Empty Error"]}
+var Task = new Schema({
+    text: {type: String, required: true /*validate: [validator, "Empty Error"]*/}
    ,created: {type: Date, delault: Date.now}
+   ,isDone: Boolean
 });
 
-exports.Task = db.model('Task', Task);
+module.exports = mongoose.model('Task', Task);
