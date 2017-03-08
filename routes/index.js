@@ -1,12 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var model = require('../model');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/db');
 //var Task = model.Task;
-
-var items = [
-    {"task": "todo 1"},
-    {"task": "<b>todoooooooooo</b>"}
-];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

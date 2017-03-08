@@ -12,7 +12,20 @@
         </form>
         <ul>
             <% items.forEach(function(item) { %>
-            <li><%= item.text %></li>
+            <li>
+                <% if(item.isDone) { %>
+                    &#10003;
+                <% } %>
+                <%= item.text %>
+                <form method="POST" action="/check_task">
+                    <input type="hidden" name="id" value="<%= item._id %>">
+                    <input type="submit" value="チェックをつける/外す">
+                </form>
+                <form method="POST" action="/delete_task">
+                    <input type="hidden" name="id" value="<%= item._id %>">
+                    <input type="submit" value="削除する">
+                </form>
+            </li>
             <% }) %>
         </ul>
     </body>

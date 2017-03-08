@@ -11,6 +11,8 @@ var MongoStore = require('connect-mongo')(session);
 var index = require('./routes/index');
 var users = require('./routes/users');
 var add_task = require('./routes/add_task');
+var delete_task = require('./routes/delete_task');
+var check_task = require('./routes/check_task');
 
 var app = express();
 
@@ -33,6 +35,8 @@ secret: 'hoge',
 app.use('/', index);
 app.use('/users', users);
 app.use('/add_task', add_task);
+app.use('/delete_task', delete_task);
+app.use('/check_task', check_task);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
