@@ -10,5 +10,10 @@
             <input type="text" name="task" placeholder="タスクを入力">
             <input type="submit" value="追加する">
         </form>
+        <ul>
+            <% items.forEach(function(item) { %>
+            <li><%= item.task %></li>
+            <% }) %>
+        </ul>
     </body>
 </html>
