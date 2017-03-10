@@ -8,7 +8,7 @@ function validator(v) {
 
 var Task = new Schema({
     text: {type: String, required: true /*validate: [validator, "Empty Error"]*/}
-   ,created: {type: Date, delault: Date.now}
+   ,created: {type: Date, default: Date.now}
    ,isDone: Boolean
 });
 
